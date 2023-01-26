@@ -1,21 +1,84 @@
 #ifndef SORT_LIBRARY_H
 #define SORT_LIBRARY_H
 
+#include <string>
 #include <vector>
+#include <unordered_map>
 
 namespace SortLibrary 
 {
 	class Sort
 	{
+		private:
+			std::string displayName; 
+			template <class T> void displayData(std::vector<T> data);
 		public:
-			static template <class T> void sort(std::vector<T>);
-	}
+			Sort(std::string);
+			std::string getName();
+			template <class T> static void sort(std::vector<T> &data);
+			
+	};
 	
-	class BubbleSort extends Sort:
+	class SortTester
+	{
+		private:
+			static const int NUM_TEST_CASES;
+			typedef std::unordered_map<int, bool> testCaseMap;
+			typedef std::unordered_map<int, testCaseMap> resultsMap;
+			resultsMap results;
+			template <class T> void reportResults(T);
+			template <class T> void runTests(T);
+		public:
+			template <class T> void test(T);
+	};
+		
+	class BucketSort: public Sort
+	{
+	};
+	
+	class BubbleSort: public Sort
 	{
 		public:
-			static template <class T> void sort(std::vector<T>]);
-	}
+			BubbleSort();
+			template <class T> static void sort(std::vector<T> &data);
+	};
+	
+	class CountingSort: public Sort
+	{
+	};
+	
+	class Heapsort: public Sort 
+	{
+	};
+	
+	class InsertionSort: public Sort
+	{
+	};
+	
+	class MergeSort: public Sort 
+	{
+	};
+	
+	class RadixSort: public Sort
+	{
+	};
+	
+	class SelectionSort: public Sort 
+	{
+	};	
+	
+	class ShellSort: public Sort
+	{
+	};
+
+	class TimSort: public Sort 
+	{
+	};
+		
+	class QuickSort: public Sort
+	{
+	};	
+
 }
 
 
