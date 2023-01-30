@@ -1,9 +1,13 @@
 #include "SortLibrary.cpp"
+#include <tuple>
 
 int main()
 {
-	SortLibrary::SortTester tester;
+	// Sorters
 	SortLibrary::BubbleSort bubbler;
+	
+	// Test each sort 
+	SortLibrary::SortTester tester;
 	
 	tester.test(bubbler);
 	

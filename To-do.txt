@@ -1,4 +1,5 @@
-1. Reorganise implementation file -> function definitions can be in separate files 
-2. Add descending sort support 
-3. Finish implementation of remaining sorts 
-4. Create sort cards 
+1. Add comments
+2. Reorganise implementation file -> function definitions can be in separate files 
+3. Add descending sort support 
+4. Finish implementation of remaining sorts 
+5. Create sort cards 

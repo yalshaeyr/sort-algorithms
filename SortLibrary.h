@@ -11,11 +11,11 @@ namespace SortLibrary
 	{
 		private:
 			std::string displayName; 
-			template <class T> void displayData(std::vector<T> data);
+			template <class T> void displayData(std::vector<T>);
 		public:
 			Sort(std::string);
 			std::string getName();
-			template <class T> static void sort(std::vector<T> &data);
+			template <class T> static void sort(std::vector<T> &, bool = false);
 			
 	};
 	
@@ -40,14 +40,14 @@ namespace SortLibrary
 	{
 		public:
 			BubbleSort();
-			template <class T> static void sort(std::vector<T> &data);
+			template <class T> static void sort(std::vector<T> &, bool = false);
 	};
 	
 	class CountingSort: public Sort
 	{
 	};
 	
-	class Heapsort: public Sort 
+	class HeapSort: public Sort 
 	{
 	};
 	

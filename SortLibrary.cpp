@@ -15,7 +15,7 @@ namespace SortLibrary
 		return displayName;
 	}
 	
-	template <class T> void Sort::sort(std::vector<T> &data)
+	template <class T> void Sort::sort(std::vector<T> &data, bool desc)
 	{
 		std::cout << "This sort has not been implemented yet" << std::endl;
 	}
@@ -117,13 +117,13 @@ namespace SortLibrary
 		reportResults(sorter);
 	}
 	
-	template <class T> void BubbleSort::sort(std::vector<T>& data)
+	template <class T> void BubbleSort::sort(std::vector<T>& data, bool desc)
 	{
 		for (int i = 0; i < data.size(); i++)
 		{
 			for (int j = i+1; j < data.size(); j++)
 			{
-				if (data[i] > data[j])
+				if (!desc && data[i] > data[j] || desc && data[i] < data[j])
 				{
 					std::iter_swap(data.begin() + i, data.begin() + j);
 				}	
