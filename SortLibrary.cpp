@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <fstream>
+#include <map>
 
 namespace SortLibrary
 {
@@ -44,9 +45,9 @@ namespace SortLibrary
 			{
 				if (!innerIt->second)
 				{
-					std::cout << "For test_case_" << it->first << ": "
-							  << "Case " << innerIt->first << " failed " 
-							  << std::endl;
+					std::cout << "For test_case_" << it->first << ", "
+							  << "case " << innerIt->first << ": " 
+							  << sorter.getName() << " failed." << std::endl;
 					allPassed = false; 
 				}
 			}
@@ -117,6 +118,8 @@ namespace SortLibrary
 		reportResults(sorter);
 	}
 	
+	BubbleSort::BubbleSort() : Sort("Bubble Sort"){}
+	
 	template <class T> void BubbleSort::sort(std::vector<T>& data, bool desc)
 	{
 		for (int i = 0; i < data.size(); i++)
@@ -131,5 +134,41 @@ namespace SortLibrary
 		}
 	}
 	
-	BubbleSort::BubbleSort() : Sort("Bubble Sort"){}
+	CountingSort::CountingSort() : Sort("Counting Sort"){}
+	
+	template <class T> void CountingSort::sort(std::vector<T>& data, bool desc)
+	{		
+		std::map<T, int> count;
+			
+		
+		for (int i = 0; i < data.size(); i++)
+		{
+			try
+			{
+				count[data[i]]++;
+			}
+			
+			catch (const std::out_of_range &oor) 
+			{
+				count[data[i]] = 1;
+			}
+		}
+		
+		int i = 0;
+		
+		// Descending order not working 
+		typename std::map<T, int>::iterator it = desc ? count.end() : count.begin();
+		typename std::map<T, int>::iterator end = desc ? count.begin() : count.end();
+		
+		while ( it != end )
+		{
+			//std::cout << it->first << "->" << it->second << std::endl;
+			for (int j = 0; j < it->second; j++)
+			{
+				data[i++] = it->first; 
+			}	
+			
+			std::advance(it, desc ? -1 : 1);
+		}
+	}
 }

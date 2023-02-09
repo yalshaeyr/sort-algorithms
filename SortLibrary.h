@@ -11,10 +11,10 @@ namespace SortLibrary
 	{
 		private:
 			std::string displayName; 
-			template <class T> void displayData(std::vector<T>);
 		public:
 			Sort(std::string);
 			std::string getName();
+			template <class T> static void displayData(std::vector<T>);
 			template <class T> static void sort(std::vector<T> &, bool = false);
 			
 	};
@@ -45,6 +45,9 @@ namespace SortLibrary
 	
 	class CountingSort: public Sort
 	{
+		public:
+			CountingSort();
+			template <class T> static void sort(std::vector<T> &, bool = false);
 	};
 	
 	class HeapSort: public Sort 

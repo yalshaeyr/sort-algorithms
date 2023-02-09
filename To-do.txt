@@ -1,5 +1,6 @@
 1. Add comments
 2. Reorganise implementation file -> function definitions can be in separate files 
-3. Add descending sort support 
-4. Finish implementation of remaining sorts 
-5. Create sort cards 
+3. Add test cases for DESC and test 
+4. Outsource at least one sort to Python
+5. Finish implementation of remaining sorts 
+6. Create sort cards 
