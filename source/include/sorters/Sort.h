@@ -53,10 +53,6 @@ namespace SortLibrary
 	class TimSort: public Sort 
 	{
 	};
-		
-	class QuickSort: public Sort
-	{
-	};	
 }
 
 
