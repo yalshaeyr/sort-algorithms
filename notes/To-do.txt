@@ -1,6 +1,11 @@
-1. Add comments
-2. Reorganise implementation file -> function definitions can be in separate files 
-3. Add test cases for DESC and test 
-4. Outsource at least one sort to Python
-5. Finish implementation of remaining sorts 
-6. Create sort cards 
+1. Add comments to QuickSort.cpp 
+2. Fix findPivot function 
+3. SortTester.cpp needs fixing/updates
+-> a: rename runTests()/reportResults() to runManualTests() and reportManualTestResults() 
+-> b: runManualTests() should call runManualTest() -> just create a separate function, it's doing too much right now.
+-> c: SortTester can use counting sort as a baseline -> generate random test cases and test against this
+-> d: Call these functions runTests()/runTest()/reportTestResults() as they are automatic tests 
+-> e: create a simple timer function, then save the results based on n 
+4. Visualise results for the three implemented sorts in Python 
+5. Create a GitHub pages webpage depicting the results so far 
+6. Finish implementation of remaining sorts 

@@ -1,5 +1,0 @@
-1. Create a timer class and test runtime on random vectors of random sizes 
-2. Compare each sort based on size n, then export data
-3. Visualise in Python
-4. Create a GitHub pages webpage depicting the results
-5. Create a makefile? 
