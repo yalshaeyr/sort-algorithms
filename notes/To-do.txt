@@ -8,4 +8,5 @@
 -> e: create a simple timer function, then save the results based on n 
 4. Visualise results for the three implemented sorts in Python 
 5. Create a GitHub pages webpage depicting the results so far 
-6. Finish implementation of remaining sorts 
+6. Merge branches
+7. Finish implementation of remaining sorts 
