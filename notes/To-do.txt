@@ -1,12 +1,17 @@
-1. Add comments to QuickSort.cpp 
-2. Fix findPivot function 
 3. SortTester.cpp needs fixing/updates
 -> a: rename runTests()/reportResults() to runManualTests() and reportManualTestResults() 
 -> b: runManualTests() should call runManualTest() -> just create a separate function, it's doing too much right now.
--> c: SortTester can use counting sort as a baseline -> generate random test cases and test against this
--> d: Call these functions runTests()/runTest()/reportTestResults() as they are automatic tests 
--> e: create a simple timer function, then save the results based on n 
+-> c1: SortTester can use counting or bubble sort as a baseline -> generate random test cases and test against this.
+-> c2: Call these functions runTests()/runTest()/reportTestResults() as they are automatic tests 
+-> c3: Specifically, randomise vector contents from n = 0 -> 1000. This should "prove" that it works 
+-> c4: create a simple timer function
+-> c5: From n = 1 -> 10k, randomise vector contents and test for each sort.
+-> c6: Export data (n vs time) to .csv 
 4. Visualise results for the three implemented sorts in Python 
-5. Create a GitHub pages webpage depicting the results so far 
+-> have it read directly from the .csv so that when later sorts are updated, the python plots will be updated, and the webpage can be updated easily 
+5. Create a GitHub pages webpage depicting the results so far
+-> create new repository  
+-> use mpld3 to convert to html
+-> use CSS to design webpage layout (inc. mobile compatibility) 
 6. Merge branches
 7. Finish implementation of remaining sorts 

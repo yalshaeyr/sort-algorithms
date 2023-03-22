@@ -11,10 +11,12 @@ namespace SortLibrary
 	{
 		private:
 			std::string displayName; 
+		protected:
+			template <class T> static void swap(std::vector<T> &, int, int);
 		public:
 			Sort(std::string);
 			std::string getName();
-			template <class T> static void displayData(std::vector<T>);
+			template <class T> static void displayData(std::vector<T>, int = 0, int = -1);
 			// most important component - the static sort function
 			template <class T> static void sort(std::vector<T> &, const bool = false);
 			

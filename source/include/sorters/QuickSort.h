@@ -11,6 +11,7 @@ namespace SortLibrary
 		private:
 			template <class T> static int findPivot(std::vector<T> &, int, int);
 			template <class T> static int partition(std::vector<T> &, int, int, int, const bool = false);
+			template <class T> static int debugPartition(std::vector<T> &, int, int, int, const bool = false);
 			template <class T> static void quickSort(std::vector<T> &, int, int, const bool = false);
 		public: 
 			QuickSort();
