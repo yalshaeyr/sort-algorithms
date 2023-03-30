@@ -16,6 +16,7 @@ namespace SortLibrary
 		public:
 			Sort(std::string);
 			std::string getName();
+			template <class T> std::vector<T> generateRandomData(int, const T);
 			template <class T> static void displayData(std::vector<T>, int = 0, int = -1);
 			// most important component - the static sort function
 			template <class T> static void sort(std::vector<T> &, const bool = false);

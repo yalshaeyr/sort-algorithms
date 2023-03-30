@@ -24,6 +24,22 @@ namespace SortLibrary
 		data[b] = temp; 
 	}
 	
+	/*
+	 * Generate a vector of size n populated with 
+	 * values that are limited by MAX_VAL
+	 */
+	template<class T> std::vector<T> Sort::generateRandomData(int n, const T MAX_VAL)
+	{
+		std::vector<T> randomData(n);
+		
+		for (int i = 0; i < n; i++)
+		{
+			randomData[i] = rand() % (MAX_VAL + 1);
+		}
+		
+		return randomData;
+	}
+	
 	// Default function for unimplemented sorts 
 	template <class T> void Sort::sort(std::vector<T> &data, bool desc)
 	{

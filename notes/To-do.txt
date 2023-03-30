@@ -1,17 +1,9 @@
-3. SortTester.cpp needs fixing/updates
--> a: rename runTests()/reportResults() to runManualTests() and reportManualTestResults() 
--> b: runManualTests() should call runManualTest() -> just create a separate function, it's doing too much right now.
--> c1: SortTester can use counting or bubble sort as a baseline -> generate random test cases and test against this.
--> c2: Call these functions runTests()/runTest()/reportTestResults() as they are automatic tests 
--> c3: Specifically, randomise vector contents from n = 0 -> 1000. This should "prove" that it works 
--> c4: create a simple timer function
--> c5: From n = 1 -> 10k, randomise vector contents and test for each sort.
--> c6: Export data (n vs time) to .csv 
-4. Visualise results for the three implemented sorts in Python 
--> have it read directly from the .csv so that when later sorts are updated, the python plots will be updated, and the webpage can be updated easily 
-5. Create a GitHub pages webpage depicting the results so far
+1. Add comments to SortReporter.cpp and .h, and visualiseSorts.py
+2. Create a GitHub pages webpage depicting the results so far using ChatGPT 
 -> create new repository  
 -> use mpld3 to convert to html
 -> use CSS to design webpage layout (inc. mobile compatibility) 
-6. Merge branches
-7. Finish implementation of remaining sorts 
+3. Merge branches
+4. Finish implementation of remaining sorts using ChatGPT
+5. Literally visualise the process of sorts -> use ChatGPT.
+-> Initially, just display changes to the array 

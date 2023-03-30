@@ -4,6 +4,7 @@
 #include "include/sorters/CountingSort.cpp"
 #include "include/sorters/QuickSort.cpp"
 #include "include/tools/SortTester.cpp"
+#include "include/tools/SortReporter.cpp"
 
 int main()
 {
@@ -11,9 +12,13 @@ int main()
 	SortLibrary::QuickSort quick;
 	
 	// Test each sort 
-	SortLibrary::SortTester tester;
+/* 	SortLibrary::SortTester tester;
 	
-	tester.test(quick, true);
+	tester.test(quick, true, false); */
+	
+	// Report efficiency
+	SortLibrary::SortReporter reporter;
+	reporter.report(quick, false);
 	
 	return 0;
 }
