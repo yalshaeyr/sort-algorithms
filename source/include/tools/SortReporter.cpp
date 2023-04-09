@@ -11,7 +11,8 @@
 namespace SortLibrary
 {
 	/*
-	 *
+	 * Convert the current time into a date-time format that 
+	 * is human readable 
 	 */
 	std::string getCurrentDateTimeInFormat() 
 	{
@@ -30,7 +31,8 @@ namespace SortLibrary
 	}
 	
 	/*
-	 *
+	 * A timer wrapper
+	 * Simply records and returns the real time taken to run func() 
 	 */
 	template <class F> float SortReporter::timer(F func, std::vector<int>& data, const bool desc)
 	{
@@ -44,10 +46,11 @@ namespace SortLibrary
 	
 	
 	/*
-	 *
+	 * Runs the given sort for random datasets of gradually-increasing size n
 	 */
 	template <class T> std::map<int, float> SortReporter::runSort(T sorter, const bool desc)
 	{
+		// initialise the results 
 		std::map<int, float> results; 
 		
 		const int LARGEST_SIZE = 1000; // n, size of dataset 
@@ -69,15 +72,19 @@ namespace SortLibrary
 	
 	
 	/*
-	 *
+	 * Export the results to a file for later use 
 	 */
 	void SortReporter::exportResults(std::map<int, float> results, std::string name)
 	{
+		// The name of the file 
 		std::string fileName = DIRECTORY + name + " " + FILE_NAME + " " +
 							   getCurrentDateTimeInFormat() + ".csv";
+		// Open the file 
 		std::ofstream outputFile(fileName);
 
-		if (outputFile.fail()) {
+		// If unable to open, do not proceed 
+		if (outputFile.fail()) 
+		{
 			std::cerr << "Unable to open file: " << fileName << std::endl;
 		}
 		
@@ -91,6 +98,7 @@ namespace SortLibrary
 				outputFile << entry.first << "," << entry.second << std::endl;
 			}
 
+			// Close the file and inform the user 
 			outputFile.close();
 			std::cout << "Data successfully exported to: " << fileName << std::endl;
 		}
@@ -99,7 +107,7 @@ namespace SortLibrary
 	}
 	
 	/*
-	 *
+	 * Invokes a Python script to visualise the sort 
 	 */
 	void SortReporter::visualise()
 	{
@@ -111,14 +119,14 @@ namespace SortLibrary
 	}
 	
 	/*
-	 *
+	 * Collects, stores and visualises performance data of the given sort 
 	 */
 	template <class T> void SortReporter::report(T sorter, const bool desc)
 	{
+		// Run the sort and export the results 
 		exportResults(runSort(sorter, desc), sorter.getName());
 		// visualise in Python 
 		visualise();
-		
 	}
 	
 	

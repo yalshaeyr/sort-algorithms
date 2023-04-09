@@ -6,12 +6,18 @@
 
 namespace SortLibrary
 {
+	/*
+	 * Collects, stores and visualises performance data 
+	 * for a given sort. 
+	 */ 
 	class SortReporter
 	{
 		private:
+			// File specifics 
 			std::string DIRECTORY = "results/";
 			std::string FILE_NAME = "sort_results";
-			std::string INVOKE_PYTHON = "python scripts/visualiseSorts.py";
+			// Command to invoke the script on Windows 
+			std::string INVOKE_PYTHON = "python scripts/visualise_sorts.py";
 			std::string getCurrentDateTime();
 			template <class F> float timer(F, std::vector<int>&, const bool = false);
 			template <class T> std::map<int, float> runSort(T, const bool = false);

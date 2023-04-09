@@ -1,9 +1,17 @@
-1. Add comments to SortReporter.cpp and .h, and visualiseSorts.py
+1. Finish the growth_rate.py/visualise_sorts.py script 
+-> Use GridSearchCV() alongside a FeatureUnion() or simple loop 
+-> First, create a function which only tests LinearRegression().
+-> Then, implement PolynomialRegression().
+-> Finally, Logarithmic regression (logarithmic transformation + linear regression)
+-> In the get_growth_rate() function, return the ideal model and its parameters 
+-> Plot this in the visualisation script 
 2. Create a GitHub pages webpage depicting the results so far using ChatGPT 
 -> create new repository  
 -> use mpld3 to convert to html
 -> use CSS to design webpage layout (inc. mobile compatibility) 
-3. Merge branches
-4. Finish implementation of remaining sorts using ChatGPT
+3. Finish implementation of remaining sorts using ChatGPT
+4. Create a nice GUI to select sorts and n?
 5. Literally visualise the process of sorts -> use ChatGPT.
 -> Initially, just display changes to the array 
+
+After each step, merge branches
