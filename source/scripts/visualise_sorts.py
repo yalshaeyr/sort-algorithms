@@ -17,7 +17,7 @@ if len(files) == 0:
     with open(ERR_FILE, "a+") as error_file:
         error_file.write(f'{datetime.datetime.now()}: No CSV files found in {results_dir}')
     exit(-1)
-latest_file = files[len(files)-1]
+latest_file = files[0]
 csv_path = os.path.join(results_dir, latest_file)
 
 # Load the data from the CSV file into a Pandas dataframe
@@ -41,7 +41,6 @@ vis_path = os.path.join(results_dir, vis_name)
 # Save then show the plot 
 plt.savefig(vis_path, dpi = 500, bbox_inches = 'tight')
 plt.show()
-
 
 
 # TO DO: 
